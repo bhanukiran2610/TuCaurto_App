@@ -1,0 +1,31 @@
+package in.tucaurto.rest;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import in.tucaurto.dao.PropertyDAO;
+import in.tucaurto.dao.UserDAO;
+import in.tucaurto.entity.Property;
+import in.tucaurto.entity.User;
+
+@RestController
+public class UserRest {
+
+	@Autowired
+	private PropertyDAO propertyDao;
+	
+	@Autowired
+	private UserDAO userDao;
+	
+	@GetMapping("/myproperties/{userID}")
+	public Iterable<Property> findmyProperties(@PathVariable String userID){
+		User user= userDao.findByEmail(userID);
+		
+		return propertyDao.findByUser(user);
+		
+	}
+	
+}

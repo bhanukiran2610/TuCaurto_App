@@ -1,0 +1,26 @@
+package in.tucaurto.rest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import in.tucaurto.entity.Property;
+
+import in.tucaurto.service.PropertyService;
+
+@RestController
+public class PropertyRest {
+	
+	@Autowired
+	private PropertyService propertyService;
+	
+	@PostMapping("/propeties")
+	public Property savePropery(@RequestBody Property property) {
+		
+		
+		
+		return propertyService.saveProperty(property);
+	}
+
+}

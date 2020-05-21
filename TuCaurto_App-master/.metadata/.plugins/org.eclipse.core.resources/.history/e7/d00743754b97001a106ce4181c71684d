@@ -1,0 +1,8 @@
+package in.tucaurto.dao;
+
+
+
+public class PropertyDAOImpl implements PropertyDAO{
+
+
+}

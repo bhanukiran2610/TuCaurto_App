@@ -1,0 +1,18 @@
+package in.tucaurto.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import in.tucaurto.dao.PropertyDAO;
+import in.tucaurto.entity.Property;
+
+public class PropertyServiceImpl implements PropertyService {
+	
+	@Autowired
+	private PropertyDAO propertyDao;
+
+	@Override
+	public Property saveProperty(Property property) {
+		return propertyDao.save(property);
+	}
+
+}

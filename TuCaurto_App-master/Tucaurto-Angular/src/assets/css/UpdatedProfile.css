@@ -1,0 +1,30 @@
+
+
+
+.form-container{
+    --webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    font-family: 'Merriweather', serif;
+
+}
+
+.no-border{
+    border:none;
+}
+::placeholder {
+    font-style: normal;
+    font-size: 1em;
+    font-family: 'Merriweather', serif;
+    font-size: 13px;
+    font-weight: 100;
+
+    padding: 5px;
+}
+.p{
+    font-size: small;
+}
+h3{
+    margin-top: 20px;
+}
+

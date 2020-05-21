@@ -1,0 +1,8 @@
+server.port=8002
+spring.datasource.url=jdbc:mysql://localhost:3306/ibm
+spring.datasource.password=vk7j5qaMX5%
+spring.datasource.username=root
+
+spring.jooq.sql-dialect=MySQL8Dialect
+spring.jpa.hibernate.ddl-auto=create
+spring.jpa.show-sql=true

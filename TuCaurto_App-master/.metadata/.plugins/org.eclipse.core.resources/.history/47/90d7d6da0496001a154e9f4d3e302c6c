@@ -1,0 +1,9 @@
+package in.tucaurto.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import in.tucaurto.entity.User;
+
+public interface UserDAO extends JpaRepository<User, String> {
+
+}

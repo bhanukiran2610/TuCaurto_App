@@ -1,0 +1,18 @@
+.form-container {
+    --webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+
+    font-size: 13px;
+
+}
+
+.back-image {
+    background-image: linear-gradient(rgba(0, 0, 0.5, 0), rgba(0, 0, 0.5, 0)),
+        url(../images/HomeSearch.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+
+}

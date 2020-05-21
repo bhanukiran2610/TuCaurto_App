@@ -1,0 +1,5 @@
+package in.tucaurto.dao;
+
+public interface PropertyDAO {
+
+}

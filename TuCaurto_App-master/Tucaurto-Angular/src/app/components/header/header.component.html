@@ -1,0 +1,127 @@
+<nav class="navbar navbar-dark navbar-expand-md">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/home">Tu Caurto</a>
+
+    <button
+      data-toggle="collapse"
+      class="navbar-toggler"
+      data-target="#navcol-1"
+    >
+      <span class="sr-only">Toggle navigation</span
+      ><span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navcol-1">
+      <div class="form-inline mx-auto my-2 d-inline" style="width: 400px;">
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search for your next home"
+            #searchvalue
+          />
+          <div class="input-group-append">
+            <button
+              class="btn btn-outline-mycolor"
+              type="button"
+              (click)="search(searchvalue.value)"
+            >
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <ul class="nav navbar-nav ml-auto">
+        <li role="presentation" class="nav-item">
+          <a
+            *ngIf="basicAuth.isUserLoggedIn()"
+            routerLink="/postproperty"
+            class="btn btn-outline-mycolor"
+            ><i class=""></i><i class="fa fa-plus" aria-hidden="true"></i> Post
+            Ad
+          </a>
+        </li>
+        <li role="presentation" class="nav-item">
+          <a
+            *ngIf="!basicAuth.isUserLoggedIn()"
+            routerLink="/login"
+            class="btn btn-mycolor"
+            ><i class=""></i><i class="fa fa-home" aria-hidden="true"></i> See
+            Properties
+          </a>
+        </li>
+
+        <li role="presentation" class="nav-item">
+          <a
+            *ngIf="basicAuth.isUserLoggedIn()"
+            routerLink="/index"
+            class="nav-link"
+          >
+            <i class="fa fa-home" aria-hidden="true"></i> View Properties</a
+          >
+        </li>
+
+        <li role="presentation" class="nav-item">
+          <a
+            *ngIf="!basicAuth.isUserLoggedIn()"
+            routerLink="/login"
+            class="nav-link"
+          >
+            <i class="fa fa-sign-in" aria-hidden="true"></i> login</a
+          >
+        </li>
+        <li role="presentation" class="nav-item">
+          <a
+            *ngIf="!basicAuth.isUserLoggedIn()"
+            routerLink="/register"
+            class="nav-link"
+            ><i class="icon"></i>
+
+            <i class="fa fa-user" aria-hidden="true"></i> Register</a
+          >
+        </li>
+        <li class="nav-item dropdown" *ngIf="basicAuth.isUserLoggedIn()">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <i class="fa fa-cog"></i> Settings
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a
+              class="dropdown-item"
+              *ngIf="basicAuth.isUserLoggedIn()"
+              routerLink="/myproperties"
+            >
+              <i class="fa fa-paper-plane" aria-hidden="true"></i> My Ads</a
+            >
+            <a
+              class="dropdown-item"
+              *ngIf="basicAuth.isUserLoggedIn()"
+              routerLink="/profileedit"
+            >
+              <i class="fa fa-user" aria-hidden="true"></i> My profile</a
+            >
+
+            <div class="dropdown-divider"></div>
+            <a
+              class="dropdown-item"
+              *ngIf="basicAuth.isUserLoggedIn()"
+              routerLink="/signout"
+              ><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a
+            >
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+/>

@@ -1,0 +1,10 @@
+package in.tucaurto.dao;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import in.tucaurto.entity.Property;
+
+@Repository
+public interface PropertyDAO extends CrudRepository<Property, Integer>{
+}

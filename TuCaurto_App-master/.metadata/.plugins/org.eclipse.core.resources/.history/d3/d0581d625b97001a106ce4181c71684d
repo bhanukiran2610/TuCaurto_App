@@ -1,0 +1,61 @@
+package in.tucaurto.rest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import in.tucaurto.dao.PropertyDAO;
+import in.tucaurto.dao.PropertyTypeDAO;
+import in.tucaurto.dao.UserDAO;
+import in.tucaurto.entity.Property;
+import in.tucaurto.entity.PropertyType;
+import in.tucaurto.entity.User;
+
+@RestController
+public class PropertyRest {
+
+	@Autowired
+	private PropertyDAO propertyDao;
+
+	@Autowired
+	private PropertyTypeDAO propertyTypeDao;
+	
+	@Autowired
+	private UserDAO userDao;
+
+	@PostMapping(value= "/post/{userID}/{propertyTypeID}",consumes = "application/json", produces = "application/json" )
+	public ResponseEntity<Property> saveProperty(@PathVariable String userID,@PathVariable int propertyTypeID,@RequestBody Property property) {
+
+		//getting and setting the propertyType
+		PropertyType propertyType = propertyTypeDao.findById(propertyTypeID).get();
+		property.setType(propertyType);
+		
+		//getting and setting the useremail
+		User user = userDao.findByEmail(userID);
+		property.setUser(user);		
+		
+		//saving the property
+		 propertyDao.save(property);
+		 
+		 //returing back the property in response entity
+		 return ResponseEntity.ok().body(property);
+	}
+	
+
+	@GetMapping("/properties")
+	public ResponseEntity<Iterable<Property>> getProperties(){
+	
+		return ResponseEntity.ok().body(propertyDao.findAll());
+	}
+	
+	
+	@GetMapping("/properties/{propertyID}")
+	public ResponseEntity<Property> getProperty(@PathVariable int propertyID){
+		return ResponseEntity.ok().body(propertyDao.findById(propertyID));
+	}
+
+}

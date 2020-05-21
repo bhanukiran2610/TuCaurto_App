@@ -1,0 +1,9 @@
+package in.tucaurto.service;
+
+import in.tucaurto.entity.Property;
+
+public interface PropertyTypeService {
+
+	public Property saveProperty(int id,Property property);
+	
+}

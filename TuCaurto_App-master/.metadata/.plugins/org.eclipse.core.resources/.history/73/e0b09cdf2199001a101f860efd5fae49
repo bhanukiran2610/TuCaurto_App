@@ -1,0 +1,19 @@
+package in.tucaurto.dao;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import in.tucaurto.entity.Property;
+import in.tucaurto.entity.PropertyType;
+import in.tucaurto.entity.User;
+
+@Repository
+public interface PropertyDAO extends CrudRepository<Property, Integer>{
+	
+	@Query
+	public Iterable<Property> findByUser(User user);
+	
+	@Query
+	public Iterable<Property> findByCityOrPriceGreaterThanEqualOrType(String city, double price, PropertyType type);
+}

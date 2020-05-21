@@ -1,0 +1,4 @@
+insert into property_type(type,description) values('1 BHK', '1 BHK');
+insert into property_type(type,description) values('2 BHK', '2 BHK');
+insert into property_type(type,description) values('3 BHK', '3 BHK');
+insert into property_type(type,description) values('PG','Paying Guest');

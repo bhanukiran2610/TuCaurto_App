@@ -1,0 +1,11 @@
+package in.tucaurto.rest;
+
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UserRest {
+
+	
+	
+}

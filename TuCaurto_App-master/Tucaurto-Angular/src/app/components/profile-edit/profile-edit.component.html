@@ -1,0 +1,221 @@
+<div class="container-fluid">
+  <div class="row mt-3">
+    <div class="col-lg-7">
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-ride="carousel"
+      >
+        <ol class="carousel-indicators">
+          <li
+            data-target="#carouselExampleIndicators"
+            data-slide-to="0"
+            class="active"
+          ></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              class="d-block w-100"
+              src="../../../assets/images/QueitTown.png"
+              width="500px"
+              height="400px"
+              style="margin-top: 120px;"
+              style="margin-left: 20px;"
+              alt="First slide"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100"
+              src="../../../assets/images/HomeNew.png"
+              width="500px"
+              height="400px"
+              style="margin-top: 120px;"
+              style="margin-left: 20px;"
+              alt="Second slide"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100"
+              src="../../../assets/images/Apart.png"
+              width="500px"
+              height="400px"
+              style="margin-top: 120px;"
+              style="margin-left: 20px;"
+              alt="Third slide"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100"
+              src="HomeNew.png"
+              width="500px"
+              height="400px"
+              style="margin-top: 120px;"
+              style="margin-left: 20px;"
+              alt="Fourth slide"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100"
+              src="../../../assets/images/buy.png"
+              width="500px"
+              height="350px"
+              style="margin-top: 120px;"
+              style="margin-left: 20px;"
+              alt="Fifth slide"
+            />
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <form class="form-container" (ngSubmit)="onSubmit()">
+        <div class="card mt-3 bg-white">
+          <div class="card-title text-center mt-3">
+            <img
+              src="{{ user.imageUrl }}"
+              height="140px"
+              width="140px"
+              class="img-rounded"
+            />
+          </div>
+
+          <h4 class="text-left ml-4">
+            Update Profile <span class="fa fa-1x fa-pencil-square"></span>
+          </h4>
+
+          <div class="card-body">
+            <div class="form-group mb-3">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                placeholder="Name"
+                name="name"
+                [(ngModel)]="user.name"
+              />
+            </div>
+            <div class="form-group mb-3">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Email "
+                [(ngModel)]="user.email"
+              />
+            </div>
+            <div class="form-group mb-3">
+              <label for="phoneNumber">Contact Number</label>
+              <input
+                type="tel"
+                class="form-control"
+                id="phoneNumber"
+                minlength="10"
+                maxlength="10"
+                name="contactNumber"
+                [(ngModel)]="user.contactNumber"
+                placeholder="Mobile Number"
+              />
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">Address</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputAddress"
+                placeholder="1234 Main St"
+                name="address"
+                [(ngModel)]="user.address"
+              />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputCity"
+                  placeholder="City"
+                  name="city"
+                  [(ngModel)]="user.city"
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputState">State</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputState"
+                  placeholder="State"
+                  name="state"
+                  [(ngModel)]="user.state"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="zipCode">Pincode</label>
+              <input
+                type="text"
+                class="form-control"
+                id="zipCode"
+                name="pincode"
+                placeholder="ZipCode"
+                minlength="6"
+                maxlength="6"
+                [(ngModel)]="user.pincode"
+              />
+            </div>
+            <div class="form-group">
+              <label for="imageUrl">Image Url</label>
+              <input
+                type="text"
+                class="form-control"
+                id="imageUrl"
+                name="imageUrl"
+                [(ngModel)]="user.imageUrl"
+              />
+            </div>
+            <button
+              type="submit"
+              class="btn btn-block"
+              style="background-color: #00b0ff; color: #fff;"
+            >
+              Update</button
+            ><br />
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-lg-1"></div>
+  </div>
+</div>
